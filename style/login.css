@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+body{
+    font-family: 'lato', sans-serif;
+    margin: 0;
+    padding: 0;background-color: #eeeeee;
+
+}
+#navbar{
+    height: 58px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #FFFFFF;
+    /* position: sticky; */
+    
+}
+#logo{
+    width: 100px;
+    height: 35px;
+    left: 44%;
+    position: relative;
+    top:14%;
+    cursor: pointer;
+}
+h2{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 900;
+    font-size:26px;
+}
+
+.container
+{
+    margin: auto;
+    border: 1px solid lightgray;
+    background-color: #FFFFFF;
+    height: 677px;
+    width: 532px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: gray;
+    font-weight: 400;
+    width: 85%;
+    justify-content: center;
+    margin: 0 ;
+}
+
+    .separator::before,
+    .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+    
+}
+#google , #facebook, #apple{
+    margin: auto;
+    border: 1px solid black;
+    height: 44px;
+    width: 80%;
+  
+}
+.socialLogin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    gap: 20px;   
+}
+#google{
+    background-color: #eeeeee;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#facebook{
+    background-color: #1877F2;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+
+}
+#apple{
+    background-color: black;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+
+}
+.logoimage{
+    height: 20px;
+    width: 20px;
+    margin-right: 15px;
+}
+
+#inputBox{
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+#input{
+    height: 44px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 85%;
+}
+#input:focus-visible{
+    border: 2px solid red;
+
+}
+#continueBtn:enabled{
+    border-radius: 25px;
+    background: #F99D1C;
+    color: #FFFFFF;
+    width: 170px;
+    height: 55px;
+    border: none;
+    margin-top: 35px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#continueBtn:disabled{
+    border-radius: 25px;
+    background: #eeeeee;
+    color: #FFFFFF;
+    width: 170px;
+    height: 55px;
+    border: none;
+    margin-top: 35px;
+    font-size: 18px;
+    
+
+}
+
+#footerimage
+{
+    width: 290px;
+    height: 190px;
+    margin-top: 45px;
+}
+
+

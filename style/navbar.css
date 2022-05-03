@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+body{
+    font-family: 'lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#navbar{
+    height: 62px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #FFFFFF;
+    /* position: sticky; */
+}
+#midNav img{
+    width: 100px;
+    height: 35px;
+    display: flex;
+    position: relative;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50% , -50%);
+}
+#leftNav{
+    width: 120px;
+}
+#rightNav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-weight: 350;
+    font-size: 16px;
+    margin-right: 15px;
+    background-color: #ffffff;
+    /* cursor: pointer; */
+}
+#rightNav ul a{
+    text-decoration: none;
+    color: black;
+}
+#rightNav ul a:hover{
+    color: gray;
+
+}
+.timediv{
+    height: 105px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    background: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* bottom: 10px; */
+    text-align:left;
+}
+.timediv p{
+    margin-right: 28px;
+    color: #F99D1C;
+}

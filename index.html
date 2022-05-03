@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/slidebar.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <script src="https://kit.fontawesome.com/f84f445020.js" crossorigin="anonymous"></script>
+    
+</head>
+<style>
+   .abc{
+      width: 100%;
+      height: 290px;
+      border: 2px solid red;
+   }
+</style>
+<body>
+
+    
+    <img src="https://i.ibb.co/1s2vZCY/Screenshot-2022-05-02-192729.png" alt="" id="btn" >
+      
+    <nav id="sidebar">
+       
+       <ul>
+          <li class="active"><a href="#"><i class="fa-solid fa-award"></i>&nbsp&nbsp Subscribe<span class="fa-solid fa-angle-right"></span></a></li>
+          <li><a href="#"><i class="fa-regular fa-star"></i>&nbsp&nbspMy Reads<span class="fa-solid fa-angle-right"></span></a></li>
+          <li><a href="#"><i class="fa-solid fa-newspaper"></i>&nbsp&nbspe-Paper <img src="https://i.ibb.co/4mB1QV0/Screenshot-2022-05-03-125703.png" class="new" alt=""> <span class="fa-solid fa-angle-right"></span></a></li>
+          <li><a href="#"><i class="fa-solid fa-bell"></i></i>&nbsp&nbspNotifications<span class="fa-solid fa-angle-right"></span></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope-open-text"></i>&nbsp&nbspNewsletters <span class="fa-solid fa-angle-right"></span></a></li>
+          <li><a href="#">IFSC Code Finder <img src="https://i.ibb.co/4mB1QV0/Screenshot-2022-05-03-125703.png" class="new" alt=""> <span class="fa-solid fa-angle-right"></span></a></li>
+
+          <li class="listItems"><a href="#">THE WALL STREET</a></li>
+          <li class="listItems"><a href="#">MintGenie</a></li>
+          <li class="listItems"><a href="#">For You </a></li>
+          <li class="listItems"><a href="#"><b>Top Sections </b> </a></li>
+
+
+
+
+          <li>
+             <a href="#" class="feat-btn">Features
+             <span class="fas fa-caret-down first"></span>
+             </a>
+             <ul class="feat-show">
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Elements</a></li>
+             </ul>
+          </li>
+          <li>
+             <a href="#" class="serv-btn">Services
+             <span class="fas fa-caret-down second"></span>
+             </a>
+             <ul class="serv-show">
+                <li><a href="#">App Design</a></li>
+                <li><a href="#">Web Design</a></li>
+             </ul>
+          </li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Shortcuts</a></li>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Shortcuts</a></li>
+          <li><a href="#">Feedback</a></li>
+       </ul>
+    </nav>
+
+
+
+
+    <div id="navbar">
+        
+    </div>
+
+    <div class="timediv">
+        <p id="todayDate"></p>
+    </div>\
+    <div class="abc"></div>
+    <div class="abc"></div>
+    <div class="abc"></div>
+    <div class="abc"></div>
+    <div class="abc"></div>
+    <div class="abc"></div>
+    <div class="abc"></div>
+    <div class="abc"></div>
+  
+</body>
+</html>
+<script src="./scripts/navbar.js" type="module"></script>
+<script>
+     const toggle = document.querySelector("#btn")
+          const sidebar = document.querySelector("#sidebar")
+          document.onclick = function(e){
+              if(e.target.id !== "btn" && e.target.id !== "sidebar")
+              {
+                toggle.classList.remove("active");
+              sidebar.classList.remove("active");
+              }
+          }
+          toggle.onclick = function(){
+              toggle.classList.toggle("active");
+              sidebar.classList.toggle("active");
+          }
+        
+</script>

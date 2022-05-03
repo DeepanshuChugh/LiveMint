@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+background: #eeeeee; 
+
+font-family: 'lato', sans-serif;
+
+}
+
+
+#navbar{
+    height: 58px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #FFFFFF;
+    /* position: sticky; */
+    
+}
+#logo{
+    width: 100px;
+    height: 35px;
+    left: 44%;
+    position: relative;
+    top:14%;
+    cursor: pointer;
+}
+
+.container{
+	display: flex;
+    flex-direction: column;
+	/* flex-flow: column; */
+	justify-content: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    background-color: #FFFFFF;
+    text-align: center;
+    height: 350px;
+    padding: 35px;
+}
+
+.userInput{
+	display: flex;
+	justify-content: center;
+   
+}
+
+input{
+	margin: 10px;
+	height: 49px;
+	width: 67px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 1.2rem;
+	/* background: #eef2f3; */
+
+
+}
+input:focus{
+    border: 1px solid #F99D1C;
+}
+
+h1{
+	text-align: center;
+    margin: 25px 0px;
+}
+
+
+button{
+	width: 250px;
+	height: 55px;
+	margin: 25px auto 0px auto;
+	font-size: 1.1rem;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	background: #F99D1C;  /* fallback for old browsers */
+    color: white;
+    margin-top: 59px;
+}
+
+.container p{
+    margin: 0;
+}
+#enterOtp{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+    height: 40px;
+    margin-top: 20px;
+}
+#enterOtp span{
+    color: red;
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo" onclick="window.location='./index.html'">
+            <img src="https://images.livemint.com/static/livemint-logo-v2.svg" alt="">
+        </div>
+    </div>
+
+    <h1>Validate OTP</h1>
+
+	<div class="container">
+		<p id="otpNummber">knk</p>
+        <p>Please enter the code to proceed.</p>
+        <div id="enterOtp"><h4>Enter Otp <span>*</span> </h4></div>
+		<div class="userInput">
+            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+			<input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+			<input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+			<input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+			<input type="text" id="fifth" maxlength="1">
+		</div>
+
+		<button id="otpBtn" onclick="otpButton()"> Verify Otp to Proceed</button>
+	</div>
+</body>
+</html>
+<script>
+    const otpBtn = document.getElementById("otpBtn")
+    function clickEvent(first,last){
+			if(first.value.length){
+				document.getElementById(last).focus();
+            
+
+			}
+		}
+
+        const otpText = document.getElementById("otpNummber")
+        let data = JSON.parse(localStorage.getItem("loginData"))
+        console.log(data);
+        let otpNumber = document.getElementById("otpNummber");
+        otpNumber.innerText=`We have sent you a verification code to ${data}`
+        
+        function otpButton(){
+            console.log("fknkfnkss");
+            
+            window.location.href="./index.html"
+        }
+        
+
+</script>

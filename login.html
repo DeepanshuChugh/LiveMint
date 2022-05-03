@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo" onclick="window.location='./index.html'">
+            <img src="https://images.livemint.com/static/livemint-logo-v2.svg" alt="">
+        </div>
+    </div>
+   
+    <h2>Login or Register</h2>
+    <div class="container">
+        <div class="socialLogin">
+            <div id="google"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/5/53/20210618182605%21Google_%22G%22_Logo.svg/120px-Google_%22G%22_Logo.svg.png" class="logoimage" alt=""> Sign in with Google</div>
+            <div id="facebook"><img src="https://img.icons8.com/fluency/25/000000/facebook.png"/>Sign in with Facebook</div>
+            <div id="apple"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOXkMpw3xPGNNNto3lgm9Phz9jsfz80-AITBKiEpgL5ZuXy-It_5v5Ar2cVjXI-nwjFIY&usqp=CAU" class="logoimage" alt="">Sign in with Apple</div>
+        </div>
+        <div class="separator">OR</div>
+        <div id="inputBox">
+            <label for="" id="label">Email or Mobile Number <span>*</span></label>
+        </div>
+        <input id="input" type="email" onkeyup="debounce(validation,500)">
+        
+        <button id="continueBtn" disabled onclick="continueFunction()">Continue</button>
+        <img src="https://i.ibb.co/x3wYnJ0/Screenshot-2022-05-02-221847.png" id="footerimage" alt="">
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+</body>
+</html>
+<script src="./scripts/login.js"></script>
+<script type="text/javascript">
+   
+   
+    function continueFunction(){
+        let emailOrPhone = document.getElementById("input").value;
+    console.log(emailOrPhone);
+    console.log("dskfhk");
+    let data = localStorage.setItem("loginData",JSON.stringify(emailOrPhone))
+    window.location.href="./otp.html"
+    }
+    
+</script>
