@@ -30,6 +30,7 @@
    #left-container{
       width:15%;
       position: fixed;
+      z-index: 1;
       background-color: #F6F6F6;
     
    }
@@ -75,18 +76,43 @@
       background-color: white;
     }
     #top-news{
-       height: 300px;
+       height: fit-content;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       padding: 15px;
+       margin: 0;
+    }
+    #headlinebottom{
+       display: flex;
+       justify-content: space-between;
     }
     #bot-news{
-       height: 100px;
+       height: 150px;
       padding-left: 10px;
       padding-right: 10px;
+      display: flex;
+      flex-direction: row;
+ 
     }
     #left-container li:hover{
          cursor: pointer;
          color: #807f7f;
     }
-
+#headlineshare i{
+   padding-left: 10px;
+}
+#headlineimg{
+   width: 100%;
+}
+#publisheddate{
+ 
+margin: 0;
+}
+#headlinebottom{
+   margin: 0;
+   padding: 0;
+}
 </style>
 <body>
 
@@ -186,43 +212,25 @@
        <div id="right-container">
               <div id="rleft">
                  <div id="top-news">
-
- 
+                     <h1 id="headline"> </h1>
+                     <div id="topimage">
+                        <img alt="" id="headlineimg">
+                     </div>
+                     <div id="headlinebottom"> 
+                        <p id="publisheddate"></p>
+                        <div id="headlineshare">
+                           <i class="fa-regular fa-bookmark" style="font-size:20px "></i>
+                           <i class="fa fa-share-alt" style="font-size:20px "></i>
+                        </div>
+                     </div> 
                  </div>
-                 <div id="bot-news">
-                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
-                  2 min read . Updated: 03 May 2022
-                 </div>
-                 <div id="bot-news">
-                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
-                  5 min read . Updated: 01 May 2022
-               </div>
-               <div id="bot-news">
-                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
-                  9 min read . Updated: 02 May 2022
-               </div>
-               <div id="bot-news">
-                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
-                  3 min read . Updated: 31 April 2022
-               </div>
-               <div id="bot-news">
-                    
-               </div>
-               <div id="bot-news">
-                    
-               </div>
-               <div id="bot-news">
-                    
-               </div>
-               <div id="bot-news">
-                    
-               </div>
 
+               <!-- datas are appending here -->
 
-              </div>
+               </div>
               <div id="rright">
                  <img src="/LiveMint/components/img/ad.png" width="100%" alt="">
-
+              
               </div>
        </div>
     </div>
@@ -250,17 +258,73 @@
 
 
 async function fetchdata(){
-   let url = 'https://newsdata.io/api/1/news?apikey=pub_70517a63b7dc4fedee0cbdb5368f58f834be&category=buisness'
-     temp= await fetch(url ,{
-               
-                mode: 'no-cors',
-                headers: 
-                   {"Content-Type": "application/json",
-                    "Accept":"application/json"}
-                ,
+   let url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=004ab6ddbcf145ebb1ba618f7df8fb2a'
+     let temp= await fetch(url);
+    let data= await temp.json();
+    let fdata= data.articles;
+    let bag = document.createElement("div");
+    let bagleft=document.createElement("div");
+
+
+    fdata.forEach(({author,title,publishedAt,content,description,urlToImage},index) => {
+
+      if(index==0){
+         document.getElementById("headline").innerText=title;
+         document.getElementById("headlineimg").src=urlToImage;
+         document.getElementById("publisheddate").innerText=publishedAt;
+      }
+      else{
+         let bag = document.createElement("div");
+       let bagleft=document.createElement("div");
+       bagleft.style.width="75%";
+       bagleft.style.lineHeight="20px";
+       bagleft.style.display="flex";
+       bagleft.style.padding="10px";
+       bagleft.style.flexDirection="column";
+       bagleft.style.justifyContent="space-between";
+       let bagleftcontainer=document.createElement("div");
+       bagleftcontainer.style.display="flex";
+       bagleftcontainer.style.justifyContent="space-between";
+       let bagleftleft=document.createElement("div");
+       let bagleftright=document.createElement("div")
+       let heading=document.createElement("p");
+       heading.innerHTML=`<b>${title}</b>`;
+       let para=document.createElement("p");
+       para.innerText=`2 min read . ${publishedAt}`;
+       para.style.margin="0"; 
+       let shareoption=document.createElement("div");
+       shareoption.style.display="flex";
+       shareoption.style.alignContent="center";
+       let bookmark=document.createElement("i");
+       bookmark.setAttribute("class","fa-regular fa-bookmark");
+       bookmark.style.fontSize="20px";
+       let share=document.createElement("i");
+       share.setAttribute("class","fa fa-share-alt");
+       share.style.fontSize="20px";
+       share.style.paddingLeft="10px";
+       shareoption.append(bookmark,share);
+       bagleftcontainer.append(para,shareoption);
+       bagleft.append(heading,bagleftcontainer);
+       let bagright=document.createElement("div");
+       bagright.style.display="flex";
+       bagright.style.justifyContent="center";
+       bagright.style.padding="20px";
+       bagright.style.width="25%";
+       let img=document.createElement("img");
+       img.src=urlToImage;
+       img.style.borderRadius="10px";
+       img.style.width="100%";
+       bagright.append(img);
+       bag.append(bagleft,bagright);
+       bag.setAttribute("id","bot-news")
+       document.getElementById("rleft").append(bag); 
+ 
+      }
+      
+      
+      
     });
-    data= await temp.json();
-    console.log(data)
+       
 }
 fetchdata();
 </script>
