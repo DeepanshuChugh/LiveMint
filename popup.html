@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+body{
+    font-family: 'lato', sans-serif;
+    margin: 0;
+    padding: 0;background-color: #eeeeee;
+
+}
+    .popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+ 
+.popup #content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  width:95%;
+  max-width:480px;
+  height:306px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  border-radius: 3px;
+  padding: 45px;
+}
+ 
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:50px;
+  height:50px;
+  color:black;
+  font-size:35px;
+  font-weight:200;
+  line-height:30px;
+  text-align:center;
+}
+ 
+.popup.active .overlay {
+  display:block;
+}
+ 
+.popup.active #content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+ 
+#showPopup   {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:15px;
+  font-size:16px;
+  border:2px solid #222;
+  color:#222;
+  font-weight:600;
+  background:#fff;
+  cursor: pointer;
+}
+#continueBtn{
+  border-radius: 25px;
+    background: #F99D1C;
+    color: #FFFFFF;
+    width: 130px;
+    height: 38px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+h1{
+  margin-bottom: 19px;
+}
+p{
+  margin: 2px;
+  padding: 3px;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+  <div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div id="content">
+      <div class="close-btn" onclick="togglePopup()">&times;</div>
+      <h1>Wait for it...</h1>
+      <p>Log in to our website to save your </p>
+      <p>bookmarks. It'll just take a moment.</p>
+      <button id="continueBtn" onclick="signInPage()">Yes,Continue</button>
+    </div>
+  </div>
+   
+  <button onclick="togglePopup()" id="showPopup">Show Popup</button>
+</body>
+</html>
+<script>
+ function togglePopup(){
+  let popup = document.getElementById("popup-1");
+  if(popup){
+    popup.classList.toggle("active");
+    // if(!popup.classList.contains("active")){
+    //   popup.parentElement.removeChild(popup);
+    // }
+  }
+}
+document.onclick = function(e){
+              if(e.target.id !== "content"  && e.target.id !== "sidebar")
+              {
+                popup.classList.remove("active");
+              }
+          }
+
+function signInPage()
+{
+  window.location.href="./login.html"
+}
+      
+          
+</script>

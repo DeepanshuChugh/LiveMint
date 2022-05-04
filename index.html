@@ -113,6 +113,18 @@ margin: 0;
    margin: 0;
    padding: 0;
 }
+#recommended {
+   padding: 0px 10px;
+   display: flex;
+   justify-content: space-between;
+   font-size: 20px;
+   font-weight: bold;
+   border-bottom: 1px solid grey;
+}
+#recommended i{
+   color: orange;
+}
+
 </style>
 <body>
 
@@ -230,7 +242,11 @@ margin: 0;
                </div>
               <div id="rright">
                  <img src="/LiveMint/components/img/ad.png" width="100%" alt="">
-              
+                  <div id="recommended">
+                     <span>Recommended For You</span>
+                     <span><i class="fa-solid fa-angle-right"></i></span>
+                  </div>
+                  <div id="right_sidebar_container"></div>
               </div>
        </div>
     </div>
@@ -238,6 +254,7 @@ margin: 0;
   
 </body>
 </html>
+<script src="./components/rightsidebar.js"></script>
 <script src="./scripts/navbar.js" type="module"></script>
 <script>
      const toggle = document.querySelector("#btn")
@@ -268,9 +285,14 @@ async function fetchdata(){
     fdata.forEach(({author,title,publishedAt,content,description,urlToImage},index) => {
 
       if(index==0){
-         document.getElementById("headline").innerText=title;
+         let headline = document.getElementById("headline")
+         headline.innerText=title;
+         headline.style.cursor = "pointer"
          document.getElementById("headlineimg").src=urlToImage;
          document.getElementById("publisheddate").innerText=publishedAt;
+         headline.addEventListener("click",function(){
+         myFn({author,title,publishedAt,content,description,urlToImage})
+      })
       }
       else{
          let bag = document.createElement("div");
@@ -318,12 +340,21 @@ async function fetchdata(){
        bag.setAttribute("id","bot-news")
        document.getElementById("rleft").append(bag); 
  
+       bag.addEventListener("click",function(){
+         myFn({author,title,publishedAt,content,description,urlToImage})
+      })
       }
-      
-      
+   
       
     });
        
 }
 fetchdata();
+function myFn({author,title,publishedAt,content,description,urlToImage}){
+   let data = {author:author,title:title,publishedAt:publishedAt,content:content,description:description,urlToImage:urlToImage}
+   localStorage.setItem("newsData",JSON.stringify(data))
+   window.location.href = "news.html"
+}
 </script>
+
+
