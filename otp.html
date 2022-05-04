@@ -148,7 +148,7 @@ button{
         let data = JSON.parse(localStorage.getItem("loginData"))
         console.log(data);
         let otpNumber = document.getElementById("otpNummber");
-        otpNumber.innerText=`We have sent you a verification code to ${data}`
+        otpNumber.innerHTML=`We have sent you a verification code to <b>${data}</b>`
         
         function otpButton(){
             console.log("fknkfnkss");
