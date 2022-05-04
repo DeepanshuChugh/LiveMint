@@ -134,7 +134,7 @@ h2{
     width: 85%;
 }
 #input:focus-visible{
-    border: 2px solid red;
+    outline: 1px solid #F99D1C;
 
 }
 #continueBtn:enabled{
