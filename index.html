@@ -264,8 +264,7 @@ async function fetchdata(){
     let fdata= data.articles;
     let bag = document.createElement("div");
     let bagleft=document.createElement("div");
-
-
+   console.log(fdata)
     fdata.forEach(({author,title,publishedAt,content,description,urlToImage},index) => {
 
       if(index==0){
