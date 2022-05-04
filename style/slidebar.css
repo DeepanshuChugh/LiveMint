@@ -1,13 +1,14 @@
 *{
-
+   
     user-select: none;
     /* box-sizing: ; */
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    
   }
   
   #btn{
-    position: absolute;
+    position:fixed;
     cursor: pointer;
     transition: left 0.4s ease;
     z-index: 999;
@@ -26,7 +27,7 @@
     left: -300px;
     gap: 5px;
     background: white;
-    transition: left 0.4s ease;
+    transition: left 0.4s;
     overflow-y: scroll;
     z-index: 999;
   }

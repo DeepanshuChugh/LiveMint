@@ -17,17 +17,82 @@
     
 </head>
 <style>
-   .abc{
-      width: 100%;
-      height: 290px;
-      border: 2px solid red;
+ @import url('https://fonts.googleapis.com/css2?family=Lato');
+   .container{
+      width: 80%;
+      margin: auto;
+      color: #212121;
+      font-family: "Lato Regular", sans-serif;
+      font-size: small;
+      line-height: 35px;
+      height: 100%;
    }
+   #left-container{
+      width:15%;
+      position: fixed;
+      background-color: #F6F6F6;
+    
+   }
+   #right-container{
+      width: 80%;
+      margin-left: 20%;
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+   }
+   #left-container li{
+      list-style-type: none;
+      padding-left: 10px;
+    
+   }
+   #bottom-list{
+      height: 280px;
+      overflow: scroll;
+       
+   }
+   .list.active{
+     background-color: #F2E6D9;
+     border-left: #FF8A00 3px solid ;
+     font-weight: bold;
+    }
+  
+    #rleft{
+       width: 70%;  
+       display: flex;
+       flex-direction: column;
+       gap: 10px;    
+    }
+    #rleft>div{
+      background-color: white;
+      
+    }
+    #rright{
+       width: 30%;
+       background-color: white;
+      
+    }
+    #rright>div{
+      background-color: white;
+    }
+    #top-news{
+       height: 300px;
+    }
+    #bot-news{
+       height: 100px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    #left-container li:hover{
+         cursor: pointer;
+         color: #807f7f;
+    }
+
 </style>
 <body>
 
     
-    <img src="https://i.ibb.co/1s2vZCY/Screenshot-2022-05-02-192729.png" alt="" id="btn" >
-      
+    
+   <img src="https://i.ibb.co/1s2vZCY/Screenshot-2022-05-02-192729.png" alt="" id="btn" > 
     <nav id="sidebar">
        
        <ul>
@@ -84,15 +149,84 @@
 
     <div class="timediv">
         <p id="todayDate"></p>
-    </div>\
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
-    <div class="abc"></div>
+    </div>
+
+    <div class="container">
+       <div id="left-container">
+          
+            <li class="list active">Home</li>
+            <li>Latest</li>
+            <li>Markets</li>
+            <li>Premium</li>
+            <li>For You</li>
+
+          <hr>
+          <div id="bottom-list">
+             <li> LIC IPO</li>
+             <li>Market Dashboard</li>
+             <li>Mint SnapView</li>
+             <li>Plain Facts</li>
+             <li>Long Story</li>
+             <li>Mark To Market</li>
+             <li>Primer</li>
+             <li>Videos</li>
+             <li>Money</li>
+             <li>Start-ups</li>
+             <li>News</li>
+             <li>Mutual Funds</li>
+             <li>Cryptocurrency</li>
+             <li>Markets</li>
+             <li>Banking</li>
+             <li>Coronavirus</li>
+             <li>Technology</li>
+             <li>Podcasts</li>
+          </div>
+       </div>
+
+       <div id="right-container">
+              <div id="rleft">
+                 <div id="top-news">
+
+ 
+                 </div>
+                 <div id="bot-news">
+                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
+                  2 min read . Updated: 03 May 2022
+                 </div>
+                 <div id="bot-news">
+                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
+                  5 min read . Updated: 01 May 2022
+               </div>
+               <div id="bot-news">
+                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
+                  9 min read . Updated: 02 May 2022
+               </div>
+               <div id="bot-news">
+                  <h3>Tata Steel announces 10-to-1 stock split as Q4 profit soars 47%</h3>
+                  3 min read . Updated: 31 April 2022
+               </div>
+               <div id="bot-news">
+                    
+               </div>
+               <div id="bot-news">
+                    
+               </div>
+               <div id="bot-news">
+                    
+               </div>
+               <div id="bot-news">
+                    
+               </div>
+
+
+              </div>
+              <div id="rright">
+                 <img src="/LiveMint/components/img/ad.png" width="100%" alt="">
+
+              </div>
+       </div>
+    </div>
+ 
   
 </body>
 </html>
@@ -112,4 +246,21 @@
               sidebar.classList.toggle("active");
           }
         
+
+
+
+async function fetchdata(){
+   let url = 'https://newsdata.io/api/1/news?apikey=pub_70517a63b7dc4fedee0cbdb5368f58f834be&category=buisness'
+     temp= await fetch(url ,{
+               
+                mode: 'no-cors',
+                headers: 
+                   {"Content-Type": "application/json",
+                    "Accept":"application/json"}
+                ,
+    });
+    data= await temp.json();
+    console.log(data)
+}
+fetchdata();
 </script>

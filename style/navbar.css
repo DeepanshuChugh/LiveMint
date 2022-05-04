@@ -3,6 +3,7 @@ body{
     font-family: 'lato', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F6F6F6;
 }
 #navbar{
     height: 62px;
@@ -12,9 +13,7 @@ body{
     position: fixed;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
     z-index: 1;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: #FFFFFF;
     /* position: sticky; */
 }

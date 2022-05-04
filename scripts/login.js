@@ -16,9 +16,7 @@ function validation(){
     
     if(input.match(pattern2) || input.match(pattern1))
     {
-        btn.disabled=false;
-       
-       
+        btn.disabled=false;   
     }
     else{;
     btn.disabled=true;

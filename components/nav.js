@@ -1,7 +1,8 @@
 function navbar (){
     return `<div id="leftNav">
-           
+  
     </div>
+    
     <div id="midNav">
         <img src="https://images.livemint.com/static/livemint-logo-v2.svg" alt="">
     </div>
