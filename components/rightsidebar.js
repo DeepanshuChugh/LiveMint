@@ -22,6 +22,8 @@ let append = (data) => {
         bag.style.borderBottom = "1px solid grey";
         bag.style.boxSizing = "border-box"
         bag.style.padding = "2px 0px"
+        bag.style.display = "flex"
+        bag.style.justifyContent = "space-around"
         let bagleft = document.createElement("div");
         bagleft.style.width = "70%";
         bagleft.style.lineHeight = "18px";
@@ -57,7 +59,8 @@ let append = (data) => {
         bagright.style.display = "flex";
         bagright.style.justifyContent = "center";
         bagright.style.padding = "10px 0px";
-        bagright.style.width = "30%";
+        bagright.style.width = "25%";
+        bagright.style.height = "80%"
         let img = document.createElement("img");
         img.src = urlToImage;
         img.style.borderRadius = "10px";
