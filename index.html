@@ -241,12 +241,14 @@ margin: 0;
 
                </div>
               <div id="rright">
-                 <img src="/LiveMint/components/img/ad.png" width="100%" alt="">
+                 <img src="components/img/ad.png" width="100%" alt="Ad Area">
                   <div id="recommended">
                      <span>Recommended For You</span>
                      <span><i class="fa-solid fa-angle-right"></i></span>
                   </div>
-                  <div id="right_sidebar_container"></div>
+                  <div id="right_sidebar_container">
+
+                  </div>
               </div>
        </div>
     </div>
@@ -339,8 +341,8 @@ async function fetchdata(){
        bag.append(bagleft,bagright);
        bag.setAttribute("id","bot-news")
        document.getElementById("rleft").append(bag); 
- 
-       bag.addEventListener("click",function(){
+       heading.style.cursor="pointer";
+       heading.addEventListener("click",function(){
          myFn({author,title,publishedAt,content,description,urlToImage})
       })
       }

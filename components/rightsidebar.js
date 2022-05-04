@@ -20,13 +20,13 @@ let append = (data) => {
       if (index % 2 == 1) {
         let bag = document.createElement("div");
         bag.style.borderBottom = "1px solid grey";
-        bag.style.boxSizing = "border-box"
+        
         bag.style.padding = "2px 0px"
         bag.style.display = "flex"
         bag.style.justifyContent = "space-around"
         let bagleft = document.createElement("div");
         bagleft.style.width = "70%";
-        bagleft.style.lineHeight = "18px";
+        bagleft.style.lineHeight = "15px";
         bagleft.style.display = "flex";
         bagleft.style.padding = "0px 10px";
         bagleft.style.flexDirection = "column";
@@ -65,9 +65,9 @@ let append = (data) => {
         img.src = urlToImage;
         img.style.borderRadius = "10px";
         img.style.width = "100%";
+        img.style.height="100px"
         bagright.append(img);
         bag.append(bagleft, bagright);
-        bag.setAttribute("id", "bot-news");
         document.getElementById("right_sidebar_container").append(bag);
       }
     }
