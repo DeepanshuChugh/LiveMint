@@ -329,11 +329,14 @@
   })
   content = document.createElement("div")
   content.innerHTML = `${newsData.content}`;
+  let readmore = document.createElement("a")
+  readmore.setAttribute("href",`${newsData.url}`)
+  readmore.innerText = "Read More..."
 
   audioBox.append(audio,audio2)
   textToSpeech.append(textToSpeechLabel,audioBox)
   imageBox.append(img,caption)
   socialIcons.append(bookmark,fb,linkedin,twitter)
   socialHolder.append(socialIcons)
-  news_container.append(h1,imageBox,author,publishedAt,socialHolder,textToSpeech,content)
+  news_container.append(h1,imageBox,author,publishedAt,socialHolder,textToSpeech,content,readmore)
 </script>
