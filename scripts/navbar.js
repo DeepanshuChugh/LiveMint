@@ -73,3 +73,35 @@ let currentDate=day+","+date+" " +month+" "+year;
 document.getElementById("todayDate").textContent=currentDate
 console.log(currentDate);
 
+
+
+// After Login Into Our Site //
+
+
+let loginData=JSON.parse(localStorage.getItem("loginData"));
+if(loginData==null){
+   let data=document.getElementById("signInData");
+   data.innerText="Sign in";
+   data.addEventListener("click",function(e){
+     window.location.href="login.html";
+   });
+}
+else{
+   let data=document.getElementById("signInData");
+   data.innerText="My Account";
+   data.addEventListener("click",function(e){
+       let account_id=document.getElementById("account_id");
+       account_id.style.display="block";
+       let dataUser=document.getElementById("userName");
+       dataUser.innerText="Unknown";
+       let userDetails=document.getElementById("userDetails");
+       userDetails.innerText=loginData;
+       let firstLetter=document.getElementById("firstLetter");
+       firstLetter.innerText="U";
+   });
+    let x=document.getElementById("closeAccoutnPro");
+    x.addEventListener("click",function(e){
+    let account_id=document.getElementById("account_id");
+    account_id.style.display="none";
+   });
+}

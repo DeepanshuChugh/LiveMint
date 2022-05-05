@@ -25,6 +25,4 @@ function validation(){
     {
         btn.disabled=true;
     }
-   
-
 }

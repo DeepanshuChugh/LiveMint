@@ -5,14 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="style/navbar.css">
     <link rel="stylesheet" href="style/slidebar.css">
-
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
     <script src="https://kit.fontawesome.com/f84f445020.js" crossorigin="anonymous"></script>
     
 </head>
@@ -211,6 +207,65 @@ margin: 0;
   font-size: 18px;
 }
 
+/* account section */
+#account_id{
+   margin-top: 0px;
+             position: fixed;
+             background-color: white;
+             right: 5px;
+             top: 0px;
+             text-align: center;
+             width: 22%;
+             height: auto;
+             padding: 20px 0px;
+             border: 1px solid red;
+             display: none;
+    }
+#account_id>ul{
+            list-style: none;
+            text-align: left;
+   }
+#account_id>ul>li{
+            padding: 10px 10px;
+            border-top: 1px solid silver;
+}
+#signInProfile{
+             background-color: #f7941e;
+             color: white;
+             text-align: center;
+             padding: 40px;
+}
+ #signInProfile .edit{
+            border: 2px solid white;
+            border-radius: 20px;
+            padding: 10px;
+}
+#signInSub{
+   text-align: center;
+   width: 60%;
+   margin: auto;
+}
+#signInSub>p{
+   border: 1px solid black;
+   border-radius: 20px;
+   padding: 10px 0px;
+}
+#firstLetter{
+   width: 20%;
+   margin: auto;
+   margin-top: 20px;
+   background-color: white;
+   border-radius: 50%;
+   color:#f7941e ;
+}
+#closeAccoutnPro{
+   position: absolute;
+   right: 2px;
+   top: 35px;
+}
+#logOut{
+   cursor: pointer;
+}
 </style>
 <body>
 
@@ -265,12 +320,33 @@ margin: 0;
     </nav>
 
 
-
-
     <div id="navbar">
         
+       
     </div>
-
+    <!-- Account Section  -->
+    <div id="account_id">
+         <div id="signIna">
+             <div id="signInProfile">
+                 <h2 id="closeAccoutnPro">X</h2>
+                   <h1 id="firstLetter"></h1>
+                  <h5 id="userName"></h5>
+                  <h6 id="userDetails">rovin7678@gmail.com</h6>
+                  <h5 class="edit">Edit Profile</h5>
+             </div>
+         </div>
+         <div id="signInSub">
+             <p>Subscribe Now</p>
+         </div>
+             <ul>
+                 <li><span><img src="https://png.pngtree.com/element_our/sm/20180626/sm_5b321c99945a2.jpg" alt="" width="20px"></span> 
+                       Get Alert on Whatsapp</li>
+                 <li>Set Preferences</li>
+                 <li>My Reads</li>
+                 <li>Redeem a Gift Card</li>
+                 <li onclick="signOut()" id="logOut">Logout</li>
+             </ul>
+     </div>
     <div class="timediv">
         <p id="todayDate"></p>
     </div>
@@ -325,7 +401,7 @@ margin: 0;
 
                <!-- datas are appending here -->
 
-               </div>
+              </div>
               <div id="rright">
                  <img src="components/img/ad.png" width="100%" alt="Ad Area">
                   <div id="recommended">
@@ -356,13 +432,13 @@ margin: 0;
 <script src="./components/rightsidebar.js"></script>
 <script src="./scripts/navbar.js" type="module"></script>
 <script>
-     const toggle = document.querySelector("#btn")
+          const toggle = document.querySelector("#btn")
           const sidebar = document.querySelector("#sidebar")
           document.onclick = function(e){
               if(e.target.id !== "btn" && e.target.id !== "sidebar")
               {
                 toggle.classList.remove("active");
-              sidebar.classList.remove("active");
+                sidebar.classList.remove("active");
               }
           }
           toggle.onclick = function(){
@@ -394,7 +470,7 @@ async function fetchdata(){
       })
       }
       else{
-         let bag = document.createElement("div");
+       let bag = document.createElement("div");
        let bagleft=document.createElement("div");
        bagleft.style.width="75%";
        bagleft.style.lineHeight="20px";
@@ -451,11 +527,8 @@ async function fetchdata(){
        heading.addEventListener("click",function(){
          myFn({author,title,publishedAt,content,description,urlToImage})
       })
-      }
-   
-      
-    });
-       
+      }      
+    });     
 }
 
 
@@ -494,6 +567,12 @@ function signInPage()
 {
   window.location.href="./login.html"
 }
+
+function signOut(){
+   localStorage.removeItem("loginData");
+   window.location.reload();
+}
+
 </script>
 
 

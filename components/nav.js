@@ -13,8 +13,9 @@ function navbar (){
             <li style="color: gray;" >|</li>
             <li ><a href="#" >e-paper</a></li>
             <li style="color: gray;">|</li>
-            <li><a href="login.html">Sign in</a></li>
+            <li id="signInData"></li>
         </ul>
+        
     </div>`;
 }
 export default navbar;
