@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://kit.fontawesome.com/f84f445020.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/carousel.css">
     
 </head>
 <style>
@@ -354,7 +355,7 @@ margin: 0;
     <div class="container">
        <div id="left-container">
           
-            <li class="list active">Home</li>
+            <li class="list active"><a href="index.html">Home</a></li>
             <li>Latest</li>
             <li>Markets</li>
             <li>Premium</li>
@@ -398,10 +399,16 @@ margin: 0;
                         </div>
                      </div> 
                  </div>
-
-               <!-- datas are appending here -->
+              <div id="carousel_div">
 
               </div>
+               <!-- datas are appending here -->
+<<<<<<< HEAD
+
+              </div>
+=======
+               </div>
+>>>>>>> 21405fec45bb49057363c363b41dcba6c6617ae0
               <div id="rright">
                  <img src="components/img/ad.png" width="100%" alt="Ad Area">
                   <div id="recommended">
@@ -431,6 +438,7 @@ margin: 0;
 </html>
 <script src="./components/rightsidebar.js"></script>
 <script src="./scripts/navbar.js" type="module"></script>
+<script src="./scripts/carousel.js" type="module" ></script>
 <script>
           const toggle = document.querySelector("#btn")
           const sidebar = document.querySelector("#sidebar")
@@ -458,7 +466,9 @@ async function fetchdata(){
     let bagleft=document.createElement("div");
    console.log(fdata)
     fdata.forEach(({author,title,publishedAt,content,description,urlToImage},index) => {
-
+      if(index==4){
+         /* document.getElementById("rleft").append(bag) */
+      }
       if(index==0){
          let headline = document.getElementById("headline")
          headline.innerText=title;
@@ -467,7 +477,7 @@ async function fetchdata(){
          document.getElementById("publisheddate").innerText=publishedAt;
          headline.addEventListener("click",function(){
          myFn({author,title,publishedAt,content,description,urlToImage})
-      })
+         })
       }
       else{
        let bag = document.createElement("div");
@@ -556,12 +566,12 @@ function togglePopup(){
     // }
   }
 }
-document.onclick = function(e){
+/* document.onclick = function(e){
               if(e.target.id !== "content"  && e.target.id !== "sidebar")
               {
                 popup.classList.remove("active");
               }
-          }
+          } */
 
 function signInPage()
 {
@@ -573,6 +583,31 @@ function signOut(){
    window.location.reload();
 }
 
+
+let c=-100;
+    function hello(){
+    document.getElementById("icontainer").style.left=`${c}px`;
+        c-=80;
+        if(c<=-1320){
+            document.getElementById("left").style.display="none";
+        }
+        if(c==-20){
+            document.getElementById("right").style.display="block"; 
+        }
+ 
+    }
+    function hello2(){
+        c+=80;
+      document.getElementById("icontainer").style.left=`${c}px`;
+      
+     if(c==-1300){
+        document.getElementById("left").style.display="block";
+     }
+     if(c==60){
+        document.getElementById("right").style.display="none";
+     }
+
+    }
 </script>
 
 

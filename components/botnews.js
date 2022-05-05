@@ -3,9 +3,10 @@ async function fetchdata(){
       let temp= await fetch(url);
      let data= await temp.json();
      let fdata= data.articles;
+     console.log(fdata)
  
  
-     fdata.forEach(({author,title,publishedAt,content,description,urlToImage}) => {
+     fdata.forEach(({author,title,publishedAt,content,description,url,urlToImage}) => {
  
         let bag = document.createElement("div");
         bag.style.display = "flex"
@@ -51,11 +52,10 @@ async function fetchdata(){
         img.style.width="100%";
         bagright.append(img);
         bag.append(bagleft,bagright);
-        bag.setAttribute("id","bot-news")
         document.getElementById("bot-news").append(bag); 
   
         bag.addEventListener("click",function(){
-          myFn({author,title,publishedAt,content,description,urlToImage})
+          myFn({author,title,publishedAt,content,description,url,urlToImage})
        })
     
        
@@ -63,8 +63,8 @@ async function fetchdata(){
         
  }
  fetchdata();
- function myFn({author,title,publishedAt,content,description,urlToImage}){
-    let data = {author:author,title:title,publishedAt:publishedAt,content:content,description:description,urlToImage:urlToImage}
+ function myFn({author,title,publishedAt,content,description,url,urlToImage}){
+    let data = {author:author,title:title,publishedAt:publishedAt,content:content,description:description,url:url,urlToImage:urlToImage}
     localStorage.setItem("newsData",JSON.stringify(data))
     window.location.href = "news.html"
  }
