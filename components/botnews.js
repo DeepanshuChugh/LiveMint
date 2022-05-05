@@ -51,7 +51,6 @@ async function fetchdata(){
         img.style.width="100%";
         bagright.append(img);
         bag.append(bagleft,bagright);
-        bag.setAttribute("id","bot-news")
         document.getElementById("bot-news").append(bag); 
   
         bag.addEventListener("click",function(){

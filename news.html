@@ -95,10 +95,12 @@
         width: 25%;
         margin: auto;
         font-size: 24px;
+        display: flex;
+        justify-content: space-between;
     }
-    .socialIcons a {
+    /* .socialIcons a {
         margin-left: 15px;
-    }
+    } */
     audio{
         width: 95%;
         margin: auto;
@@ -121,6 +123,15 @@
   width: 100%;
   height: auto;
    display: flex;
+}
+#audioBox {
+  margin-top: -15px;
+}
+#audioBox button {
+  margin-right: 15px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
 }
   </style>
   <body>
@@ -229,6 +240,7 @@
         </div>
       </div>
     </div>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=xmpJc0Jz"></script>
   </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -278,18 +290,13 @@
   img.src = newsData.urlToImage;
   let caption = document.createElement("p")
   caption.innerText = newsData.description
+  caption.style.lineHeight = "20px"
   let author = document.createElement("a")
   author.setAttribute("class","author")
   author.setAttribute("href", "#");
   author.innerText = newsData.author;
   let publishedAt = document.createElement("p")
   publishedAt.innerText = newsData.publishedAt;
-  let summary = document.createElement("p")
-  summary.setAttribute("class","summary")
-  let highlights = document.createElement("ul")
-  highlights.setAttribute("class","highlights")
-  let li = document.createElement("li")
-  li.innerText = "LIC IPO, which kicked off on Wednesday, will remain open until May 9, including on Saturday";
   let socialHolder = document.createElement("div")
   let socialIcons = document.createElement("div")
   socialIcons.setAttribute("class","socialIcons")
@@ -308,20 +315,25 @@
   let textToSpeechLabel = document.createElement("p")
   textToSpeechLabel.setAttribute("class","textToSpeechLabel")
   textToSpeechLabel.innerText = "Listen to this article"
-  let audio = document.createElement("audio")
-  audio.setAttribute("controls","none")
-  let source = document.createElement("source")
-  source.src = "https://s3.ap-south-1.amazonaws.com/htcms-prod-images/mint/mp3/11651641122805.mp3"
-  source.setAttribute("type", "audio/mpeg")
-  let content = document.createElement("div")
+  let audioBox = document.createElement("div")
+  audioBox.setAttribute("id","audioBox")
+  let audio = document.createElement("button")
+  audio.addEventListener("click",function(){
+    responsiveVoice.speak(newsData.content);
+  })
+  audio.innerText = "Play"
+  let audio2 = document.createElement("button")
+  audio2.innerText = "Stop"
+  audio2.addEventListener("click",function(){
+    responsiveVoice.pause();
+  })
+  content = document.createElement("div")
   content.innerHTML = `${newsData.content}`;
 
-  audio.append(source)
-  textToSpeech.append(textToSpeechLabel,audio)
-  summary.append(highlights)
-  highlights.append(li)
+  audioBox.append(audio,audio2)
+  textToSpeech.append(textToSpeechLabel,audioBox)
   imageBox.append(img,caption)
   socialIcons.append(bookmark,fb,linkedin,twitter)
   socialHolder.append(socialIcons)
-  news_container.append(h1,imageBox,author,summary,socialHolder,textToSpeech,content)
+  news_container.append(h1,imageBox,author,publishedAt,socialHolder,textToSpeech,content)
 </script>
