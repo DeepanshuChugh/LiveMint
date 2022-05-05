@@ -1,7 +1,7 @@
 function carouseldiv(){
     return `<div id="carousel_title"><h2>FROM THE WALL STREET JOURNAL<h2> <span> View All > </span></div>
     <div id="Carousel_container">
-    <button id="left" onclick="hello()">></button>
+    <button id="left" onclick="hello()"><</button>
     
     <div id="icontainer">
       
@@ -15,7 +15,7 @@ function carouseldiv(){
         <div><img src="./components/img/8.png" alt=""></div>
         <div><img src="./components/img/1.png" alt=""></div>
     </div>
-    <button id="right" onclick="hello2()"> < </button>
+    <button id="right" onclick="hello2()"> > </button>
 </div>`
 }
 export { carouseldiv }
