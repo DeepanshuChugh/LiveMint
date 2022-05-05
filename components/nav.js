@@ -4,7 +4,7 @@ function navbar (){
     </div>
     
     <div id="midNav">
-        <img src="https://images.livemint.com/static/livemint-logo-v2.svg" alt="">
+        <a href="index.html"><img src="https://images.livemint.com/static/livemint-logo-v2.svg" alt=""></a>
     </div>
     <div id="rightNav">
         <ul>

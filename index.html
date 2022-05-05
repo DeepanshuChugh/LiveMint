@@ -278,7 +278,7 @@ margin: 0;
     <div class="container">
        <div id="left-container">
           
-            <li class="list active">Home</li>
+            <li class="list active"><a href="index.html">Home</a></li>
             <li>Latest</li>
             <li>Markets</li>
             <li>Premium</li>
@@ -362,7 +362,7 @@ margin: 0;
               if(e.target.id !== "btn" && e.target.id !== "sidebar")
               {
                 toggle.classList.remove("active");
-              sidebar.classList.remove("active");
+                sidebar.classList.remove("active");
               }
           }
           toggle.onclick = function(){
@@ -483,12 +483,12 @@ function togglePopup(){
     // }
   }
 }
-document.onclick = function(e){
+/* document.onclick = function(e){
               if(e.target.id !== "content"  && e.target.id !== "sidebar")
               {
                 popup.classList.remove("active");
               }
-          }
+          } */
 
 function signInPage()
 {
