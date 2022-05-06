@@ -53,7 +53,7 @@ async function fetchdata(){
         bagright.append(img);
         bag.append(bagleft,bagright);
         document.getElementById("bot-news").append(bag); 
-  
+        heading.style.cursor = "pointer"
         bag.addEventListener("click",function(){
           myFn({author,title,publishedAt,content,description,url,urlToImage})
        })

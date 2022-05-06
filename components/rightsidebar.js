@@ -69,8 +69,17 @@ let append = (data) => {
         bagright.append(img);
         bag.append(bagleft, bagright);
         document.getElementById("right_sidebar_container").append(bag);
+        heading.addEventListener("click",function(){
+          myFn({author,title,publishedAt,content,description,urlToImage})
+        })
+        heading.style.cursor = "pointer"
       }
     }
   );
 };
 fetchData();
+function myFn({author,title,publishedAt,content,description,urlToImage}){
+  let data = {author:author,title:title,publishedAt:publishedAt,content:content,description:description,urlToImage:urlToImage}
+  localStorage.setItem("newsData",JSON.stringify(data))
+  window.location.href = "news.html"
+}
