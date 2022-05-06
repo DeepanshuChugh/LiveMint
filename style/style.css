@@ -195,13 +195,13 @@ font-size: 18px;
 /* account section */
 #account_id{
 margin-top: 0px;
-          position:  absolute;
+          position:  fixed;
           background-color: white;
           right: 5px;
           top: -20px;
           text-align: center;
           width: 25%;
-          height: auto;
+          height: 1800px;
           padding: 20px 0px;
           display: none;
           z-index: 1;
@@ -254,7 +254,7 @@ a{
    position: absolute;
    /* left: -10Spx; */
    margin-top: 0%;
-   /* background: red; */
+   background: #ffffff;
    width: 100%;
 }
 #account_id li{
