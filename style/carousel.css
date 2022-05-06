@@ -25,28 +25,34 @@
 }
 #left{
     width: 30px;
-    height: 50px;
-    background-color: rgba(206, 207, 206, 0.76);
+    height: 20px;
+    background-color: rgba(254, 255, 254, 0.884);
     margin-top:80px;
     position: absolute;
     z-index: 1;
     border: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 #right{
     width: 30px;
-    height: 50px;
-    background-color: rgba(206, 207, 206, 0.76);
+    height: 20px;
+    background-color: rgba(254, 255, 254, 0.884);
     position: absolute;
 	z-index: 1;
     left:800px;
     margin-top:80px;
     border: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 #right:hover{
-    transform: scale(1.2);
+    cursor: pointer;
 }
 #left:hover{
-    transform: scale(1.2);
+  cursor: pointer;
 }
 #carousel_title {
     display: flex;
