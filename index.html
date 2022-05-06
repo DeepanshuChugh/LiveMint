@@ -35,12 +35,9 @@
             flex-direction: column;
             border-radius: 4PX;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            z-index: 1;
-
-
+            position: absolute;
+            margin-left: 25px;
+            margin-top: 22px;
         }
 
         #text{
@@ -241,16 +238,7 @@
     </div>
 
 <!-- mini PopUp -->
-    <div class="mini">
-      <div id="text">
-          Share Via
-      </div>
-      <div id="icon">
-          <i class="fa-brands fa-facebook-square"></i>
-          <i class="fa-brands fa-linkedin-in"></i>
-          <i class="fa-brands fa-twitter"></i>
-      </div>
-  </div>
+ 
 
 
 </body>
@@ -328,7 +316,6 @@ async function fetchdata(){
        let bookmark=document.createElement("i");
        bookmark.setAttribute("class","fa-regular fa-bookmark");
        bookmark.style.fontSize="20px";
-
       bookmark.style.cursor="pointer";
        bookmark.addEventListener("click",function(){
          togglePopup();
@@ -338,15 +325,35 @@ async function fetchdata(){
        share.setAttribute("class","fa fa-share-alt");
        share.style.fontSize="20px";
        share.style.paddingLeft="10px";
-       shareoption.append(bookmark,share);
+   
+     let minidiv=document.createElement("div");
+     minidiv.setAttribute("class","mini");
+     let sharediv=document.createElement("div");
+     sharediv.setAttribute("id","text");
+     sharediv.innerText="Share Via";
+     let icondiv=document.createElement("div");
+     icondiv.setAttribute("id","icon");
+     let ifav=document.createElement("i");
+     ifav.setAttribute("class","fa-brands fa-facebook-square")
+     let ilink=document.createElement("i");
+     ilink.setAttribute("class","fa-brands fa-linkedin-in");
+     let itwit=document.createElement("i");
+     itwit.setAttribute("class","fa-brands fa-twitter");
+     icondiv.append(ifav,ilink,itwit);
+     minidiv.append(sharediv,icondiv);
+
+       shareoption.append(bookmark,share,minidiv);
        share.style.cursor="pointer";
        share.addEventListener("click",function(){
-         sharePopup();
-       })
+       
+      if(minidiv){
+    minidiv.classList.toggle("miniActive");
+    // if(!popup.classList.contains("active")){
+    //   popup.parentElement.removeChild(popup);
+    // }
+  }
 
-
-
-
+    } )
 
        bagleftcontainer.append(para,shareoption);
        bagleft.append(heading,bagleftcontainer);
@@ -367,7 +374,9 @@ async function fetchdata(){
        heading.addEventListener("click",function(){
          myFn({author,title,publishedAt,content,description,urlToImage})
       })
-      }      
+
+      }
+        
     });     
 }
 
@@ -439,16 +448,7 @@ let c=-100;
 
     }
 
-    function sharePopup(){
-      let sharePop = document.querySelector(".mini")
-      if(sharePop){
-    sharePop.classList.toggle("miniActive");
-    // if(!popup.classList.contains("active")){
-    //   popup.parentElement.removeChild(popup);
-    // }
-  }
 
-    }
 </script>
 
 
