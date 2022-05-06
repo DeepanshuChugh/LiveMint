@@ -82,6 +82,7 @@ let loginData=JSON.parse(localStorage.getItem("loginData"));
 if(loginData==null){
    let data=document.getElementById("signInData");
    data.innerText="Sign in";
+   data.style.cursor="pointer";
    data.addEventListener("click",function(e){
      window.location.href="login.html";
    });
@@ -89,6 +90,8 @@ if(loginData==null){
 else{
    let data=document.getElementById("signInData");
    data.innerText="My Account";
+   data.style.cursor="pointer";
+  
    data.addEventListener("click",function(e){
        let account_id=document.getElementById("account_id");
        account_id.style.display="block";
