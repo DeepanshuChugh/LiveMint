@@ -115,7 +115,7 @@ left:0px;
 width:100vw;
 height:100vh;
 background:rgba(0,0,0,0.7);
-z-index:1;
+z-index:999;
 display:none;
 }
 
@@ -128,7 +128,7 @@ background:#fff;
 width:95%;
 max-width:480px;
 height:306px;
-z-index:2;
+z-index:999;
 text-align:center;
 padding:20px;
 box-sizing:border-box;
