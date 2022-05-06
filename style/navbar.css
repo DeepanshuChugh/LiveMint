@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-body{
+body {
     font-family: 'lato', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F6F6F6;
 }
-#navbar{
+
+#navbar {
     height: 62px;
     width: 100%;
     display: flex;
@@ -17,19 +18,22 @@ body{
     background-color: #FFFFFF;
     /* position: sticky; */
 }
-#midNav img{
+
+#midNav img {
     width: 100px;
     height: 35px;
     display: flex;
     position: relative;
     top: 40%;
     left: 80%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
 }
-#leftNav{
+
+#leftNav {
     width: 120px;
 }
-#rightNav ul{
+
+#rightNav ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -42,15 +46,17 @@ body{
     background-color: #ffffff;
     /* cursor: pointer; */
 }
-#rightNav ul a{
+
+#rightNav ul a {
     text-decoration: none;
     color: black;
 }
-#rightNav ul a:hover{
-    color: gray;
 
+#rightNav ul a:hover {
+    color: gray;
 }
-.timediv{
+
+.timediv {
     height: 105px;
     width: 100%;
     border-bottom: 1px solid lightgray;
@@ -59,9 +65,70 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     /* bottom: 10px; */
-    text-align:left;
+    text-align: left;
 }
-.timediv p{
+
+.timediv p {
     margin-right: 28px;
     color: #F99D1C;
+}
+
+.search-box {
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -50%);
+    /* background: #2f3640; */
+    height: 40px;
+    border-radius: 40px;
+    /* padding: 10px; */
+    margin-top: 40px;
+    margin-left: -30px;
+    /* background-color: orange; */
+    color: white;
+    /* border: 1px solid grey; */
+}
+
+.search-box:hover>#search-txt {
+    width: 240px;
+    padding: 0 6px;
+    top: 50px;
+    border: 1px solid grey;
+    color: black;
+}
+
+.search-box:hover>.search-btn {
+    background: white;
+}
+
+.search-btn {
+    color: orange;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+#search-txt {
+    border: none;
+    /* background-color: white; */
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    border-radius: 10px;
+}
+
+#rightdiv {
+    display: flex;
+    justify-content: space-between
 }
