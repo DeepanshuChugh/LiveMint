@@ -44,30 +44,30 @@ function append() {
         let twitter = document.createElement("a")
         twitter.innerHTML = `<i class="fa-brands fa-twitter"></i>`
         twitter.setAttribute("href", "https://www.instagram.com/")
-            // let textToSpeech = document.createElement("div")
-            // let textToSpeechLabel = document.createElement("p")
-            // textToSpeechLabel.setAttribute("class", "textToSpeechLabel")
-            // textToSpeechLabel.innerText = "Listen to this article"
-            // let audioBox = document.createElement("div")
-            // audioBox.setAttribute("id", "audioBox")
-            // let audio = document.createElement("button")
-            // audio.addEventListener("click", function() {
-            //     responsiveVoice.speak(el.content);
-            // })
-            // audio.innerText = "Play"
-            // let audio2 = document.createElement("button")
-            // audio2.innerText = "Stop"
-            // audio2.addEventListener("click", function() {
-            //     responsiveVoice.pause();
-            // })
-            // let content = document.createElement("div")
-            // content.innerHTML = `${el.content}`;
+            let textToSpeech = document.createElement("div")
+            let textToSpeechLabel = document.createElement("p")
+            textToSpeechLabel.setAttribute("class", "textToSpeechLabel")
+            textToSpeechLabel.innerText = "Listen to this article"
+            let audioBox = document.createElement("div")
+            audioBox.setAttribute("id", "audioBox")
+            let audio = document.createElement("button")
+            audio.addEventListener("click", function() {
+                responsiveVoice.speak(el.content);
+            })
+            audio.innerText = "Play"
+            let audio2 = document.createElement("button")
+            audio2.innerText = "Stop"
+            audio2.addEventListener("click", function() {
+                responsiveVoice.pause();
+            })
+            let content = document.createElement("div")
+            content.innerHTML = `${el.content}`;
         let readmore = document.createElement("a")
         readmore.setAttribute("href", `${el.url}`)
         readmore.innerText = "Read More..."
 
-        // audioBox.append(audio, audio2)
-        // textToSpeech.append(textToSpeechLabel, audioBox)
+        audioBox.append(audio, audio2)
+        textToSpeech.append(textToSpeechLabel, audioBox)
         // imageBox.append(img, caption)
         socialIcons.append(bookmark, fb, linkedin, twitter)
         socialHolder.append(socialIcons, readmore)
@@ -75,7 +75,7 @@ function append() {
 
 
 
-        div.append(h2, img, h3, p, socialHolder)
+        div.append(h2, img, h3, textToSpeech, p, socialHolder)
         container.append(div)
     })
 }
