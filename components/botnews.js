@@ -1,5 +1,5 @@
 async function fetchdata(){
-    let url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=004ab6ddbcf145ebb1ba618f7df8fb2a'
+    let url = 'https://masai-mock-api.herokuapp.com/news/top-headlines?country=in'
       let temp= await fetch(url);
      let data= await temp.json();
      let fdata= data.articles;
