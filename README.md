@@ -1,6 +1,6 @@
 # Live Link: 
  
-  https://wonderful-pastelito-13ae24.netlify.app/
+  https://livemint-clone.netlify.app/
 
 # LiveMint
 
